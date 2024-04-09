@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('picha2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .board-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 36px;
+            color: red;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        form {
+            margin-top: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"],
+        .btn {
+            width: calc(50% - 5px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn.contact-us {
+            background-color: #008CBA;
+            color: white;
+        }
+
+        .btn.join-channel {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        input[type="submit"]:hover,
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading img {
+            width: 100px;
+            animation: flying-jet 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes flying-jet {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="board-name">XKING AVIATOR HACK</h1>
+        <form action="#" method="POST" id="loginForm" onsubmit="event.preventDefault(); showLoading();">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Submit">
+            <button class="btn contact-us" onclick="window.location.href='https://t.me/xKingHack';">Contact Us</button>
+            <button class="btn join-channel" onclick="window.location.href='https://t.me/xkinghackHi1xbet';">Join Channel</button>
+        </form>
+    </div>
+
+    <div class="loading" id="loading">
+        <img src="flying_jet.jpg" alt="Loading">
+    </div>
+
+    <script>
+        function showLoading() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (email && password) {
+                document.getElementById('loading').style.display = 'flex';
+                setTimeout(function() {
+                    document.getElementById('loginForm').submit();
+                }, 5000); // 5 seconds delay for demonstration, replace with actual form submission logic
+            } else {
+                alert('Please fill in both email and password fields.');
+            }
+        }
+    </script>
+</body>
+</html>
